@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <title>Passaro Voando</title>
+    <title>Passaro Voando e Cantando</title>
 </head>
 <body>
     <div class="box">
@@ -17,5 +17,27 @@
         <div class="bird"></div>
     </div>
     
+    
+    <audio id="somPassaros">
+        <source src="sons/BEIJA FLOR CANTANDO 🐦 ESSE CANTO VAI ATRAIR VÁRIOS BEIJA FLORES PRO SEU JARDIM 🐦(MP3_160K).mp3" type="audio/mpeg">
+        Seu navegador não suporta áudio.
+    </audio>
+
+    <script>
+        const som = document.getElementById("somPassaros");
+        const caixas = document.querySelectorAll(".box");
+
+        caixas.forEach(caixa => {
+            caixa.addEventListener("mouseenter", () => {
+                som.currentTime = 0;
+                som.play();
+            });
+
+            caixa.addEventListener("mouseleave", () => {
+                som.pause();
+            });
+        });
+    </script>
+</body>
 </body>
 </html>
